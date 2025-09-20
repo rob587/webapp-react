@@ -13,10 +13,10 @@ const Links = () => {
                 </div>
                 <ul className="list-unstyled d-flex justify-content-center">
                     <li className="me-4">
-                        Homepage
+                       <NavLink to='/' > Homepage </NavLink> 
                     </li>
                     <li className="me-4">
-                        Dettaglio Film
+                        <NavLink to='/details'>Dettaglio</NavLink>
                     </li>
                 </ul>
             </div>
