@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
 
@@ -13,6 +14,11 @@ const HomePage = () => {
     })
   }
 
+      useEffect(() => {
+    fetchData()
+  }, [])
+
+
 
   return (
     <>
@@ -20,9 +26,16 @@ const HomePage = () => {
         <div className="row">
           {movies.map((movie)=>{
             return(
-          <div className="col-6">
-
-          </div>
+          
+            <div className="col-6 d-flex mt-5" key={movie.id}>
+             <div className="card shadow-sm h-100">
+                <img className="card-img-top p-3" src={movie.image}  alt={movie.description}/>
+                <div className="card-body ">
+                  <h2 className="card-title "><Link to={`/details/${movie.id}`}>{movie.title}</Link></h2>
+                </div>
+              </div>
+           </div>
+         
 
             )
           })}
