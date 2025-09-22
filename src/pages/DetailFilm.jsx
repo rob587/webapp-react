@@ -5,11 +5,14 @@ import { useParams } from 'react-router-dom'
 const DetailFilm = () => {
   const { id } = useParams()
   const [movie, setMovie] = useState({})
+  const [reviews, setReviews] = useState([])
   const url = `http://localhost:3000/movies/${id}`
   
   const fetchData = () => {
     axios.get(url).then((resp) => {
-      setMovie(resp.data)
+      setMovie(resp.data.film)
+      setReviews(resp.data.reviews)
+      
     })
   }
   
@@ -28,7 +31,7 @@ const DetailFilm = () => {
                   <img src={`http://localhost:3000${movie.image}`} className="img-fluid rounded-start" alt={movie.title}/>
                 </div>
                 <div className="col-md-8">
-                  <div className="card-body">
+                  <div className="card-body py-3">
                     <h1 className="card-title">{movie.title}</h1>
                     <p className="card-text">{movie.abstract}</p>
                     <p className="card-text">
@@ -38,11 +41,25 @@ const DetailFilm = () => {
                       <small>Anno: {movie.release_year}</small>
                     </p>
                   </div>
+                  <div className="col-12">
+                    <h3>Recensioni:</h3>
+                    {reviews.map((review)=>{
+                      return(
+                        <div key={review.id} className="card my-2">
+                          <div className="card-body">
+                              <h4>{review.name} ({review.vote})</h4>
+                              <p className='card-text'>{review.text}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
       </div>
     </>
   )
