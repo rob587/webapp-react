@@ -1,0 +1,11 @@
+body{
+    font-family: "Ubuntu";
+}
+
+.card-img-top{
+    height: 500px;
+}
+
+.card-body p{
+    font-size: 25px;
+}

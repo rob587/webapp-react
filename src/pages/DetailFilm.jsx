@@ -35,7 +35,7 @@ const DetailFilm = () => {
                       <small className="text-muted">Regia: {movie.director}</small>
                     </p>
                     <p className="card-text">
-                      <small className="text-muted">Anno: {movie.year}</small>
+                      <small className="text-muted">Anno: {movie.release_year}</small>
                     </p>
                   </div>
                 </div>
