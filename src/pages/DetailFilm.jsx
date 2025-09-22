@@ -32,10 +32,10 @@ const DetailFilm = () => {
                     <h1 className="card-title">{movie.title}</h1>
                     <p className="card-text">{movie.abstract}</p>
                     <p className="card-text">
-                      <small className="text-muted">Regia: {movie.director}</small>
+                      <small>Regia: {movie.director}</small>
                     </p>
                     <p className="card-text">
-                      <small className="text-muted">Anno: {movie.release_year}</small>
+                      <small>Anno: {movie.release_year}</small>
                     </p>
                   </div>
                 </div>

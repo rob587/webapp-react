@@ -12,8 +12,8 @@ const Links = () => {
                     <h2>Benvenuto</h2>
                 </div>
                 <ul className="list-unstyled d-flex justify-content-center">
-                    <li className="me-4">
-                       <NavLink to='/' > Homepage </NavLink> 
+                    <li className="me-4 ">
+                       <NavLink style={{textDecoration: 'none'}} to='/'  > Homepage </NavLink> 
                     </li>
                 </ul>
             </div>

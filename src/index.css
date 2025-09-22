@@ -1,5 +1,5 @@
 body{
-    font-family: "Ubuntu";
+    font-family: "Ubuntu" "Open Sans";
 }
 
 .card-img-top{
@@ -9,3 +9,21 @@ body{
 .card-body p{
     font-size: 25px;
 }
+
+li{
+    color:#3C4A58 ;
+}
+
+li:hover{
+    color: #6C7B87;
+}
+
+.row{
+    background-color: #E2D1C1;
+    
+}
+
+.col-12 h2{
+    color:#1E2226
+}
+
