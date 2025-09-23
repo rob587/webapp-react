@@ -10,7 +10,7 @@ const CreateMovie = ({onMovieCreated}) => {
 
     const [formData, setFormData] = useState({
         title: '',
-        author: '',
+        director: '',
         image: null,
         abstract: '',
     })
@@ -26,7 +26,7 @@ const CreateMovie = ({onMovieCreated}) => {
   e.preventDefault()
   const data = new FormData()
   data.append('title', formData.title)
-  data.append('author', formData.author)
+  data.append('director', formData.director)
   data.append('abstract', formData.abstract)
   data.append('image', formData.image) 
   axios.post('http://localhost:3000/movies', data, {
@@ -65,12 +65,12 @@ const CreateMovie = ({onMovieCreated}) => {
                     <div className="col-12 col-md-4">
                         <label htmlFor="" className='form-label'>Autore</label>
                         <input
-                        name='author'
-                        id='author' 
+                        name='director'
+                        id='director' 
                         type="text"
                         className='form-control'
                         placeholder='Inserisci AUTORE'
-                        value={formData.author}
+                        value={formData.director}
                         onChange={setFieldValue}
                          />
                     </div>
