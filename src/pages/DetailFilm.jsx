@@ -29,7 +29,7 @@ const DetailFilm = () => {
             <div className="card shadow-sm">
               <div className="row g-0">
                 <div className="col-md-4">
-                  <img src={`http://localhost:3000${movie.image}`} className="img-fluid rounded-start" alt={movie.title}/>
+                  <img src={`http://localhost:3000/cover/${movie.image}`} className="img-fluid rounded-start" alt={movie.title}/>
                 </div>
                 <div className="col-md-8 px-4">
                   <div className="card-body ">

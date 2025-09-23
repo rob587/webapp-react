@@ -42,7 +42,8 @@ const ReviewForm = ({movieId}) => {
             name='name' 
             id='name' 
             value={formData.name}
-            onChange={setFieldValue} />
+            onChange={setFieldValue}
+            required />
         </div>
         <div className="form-group">
             <label htmlFor="" className='form-label'>Voto:</label>
@@ -55,7 +56,8 @@ const ReviewForm = ({movieId}) => {
             name='vote' 
             id='vote' 
             value={formData.vote}
-            onChange={setFieldValue} />
+            onChange={setFieldValue}
+            required />
         </div>
         <div className="form-group">
             <label htmlFor="" className='form-label'>Testo recensione:</label>
@@ -66,7 +68,8 @@ const ReviewForm = ({movieId}) => {
             name='text' 
             id='text' 
             value={formData.text}
-            onChange={setFieldValue} />
+            onChange={setFieldValue} 
+            required/>
         </div>
         <div className="form-group">
             <button type='submit'>Lascia recensione</button>
