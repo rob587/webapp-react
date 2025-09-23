@@ -1,5 +1,6 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import CreateMovie from '../pages/CreateMovie'
 
 const Links = () => {
   return (
@@ -15,7 +16,13 @@ const Links = () => {
                     <li className="me-4 ">
                        <NavLink style={{textDecoration: 'none'}} to='/'  > Homepage </NavLink> 
                     </li>
-                    <button>Inserisci nuovo Film</button>
+                    
+                    <li>
+                        <NavLink to="/movie/create" style={{ textDecoration: 'none' }}>
+                            <button>Inserisci nuovo Film</button>
+                        </NavLink>
+                    </li>
+                    
                 </ul>
             </div>
         </div>
