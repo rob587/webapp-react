@@ -1,9 +1,12 @@
 import React from 'react'
 import axios from 'axios'
 import { useState,useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
-const CreateMovie = () => {
+const CreateMovie = ({onMovieCreated}) => {
+
+    const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
         title: '',
@@ -19,20 +22,24 @@ const CreateMovie = () => {
     }
 
 
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-
-        axios.post(`http://localhost:3000`, formData,{
-            headers: {"Content-type": 'multipart/form-data'}
-        })
-        .then((resp)=>{
-            console.log('film inserito correttamente')
-
-        })
-        .catch((err)=>{
-            console.log('errore inserimento')
-        })
-    }
+    const handleSubmit = (e) => {
+  e.preventDefault()
+  const data = new FormData()
+  data.append('title', formData.title)
+  data.append('author', formData.author)
+  data.append('abstract', formData.abstract)
+  data.append('image', formData.image) 
+  axios.post('http://localhost:3000/movies', data, {
+    headers: { "Content-Type": "multipart/form-data" }
+  })
+  .then((resp) => {
+    console.log('film inserito correttamente')
+    if (onMovieCreated) onMovieCreated()
+  })
+  .catch((err) => {
+    console.log('errore inserimento', err)
+  })
+}
 
   return (
     <div className='container'>
@@ -41,7 +48,7 @@ const CreateMovie = () => {
             <h2>Aggiungi Film</h2>
         </div>
         <div className="col-12">
-            <form >
+            <form onSubmit={handleSubmit} >
                 <div className="row gy-4">
                     <div className="col-12 col-md-4">
                         <label htmlFor="" className='form-label'>Titolo</label>
@@ -53,7 +60,7 @@ const CreateMovie = () => {
                         placeholder='Inserisci Titolo'
                         value={formData.title}
                         onChange={setFieldValue}
-                        required />
+                         />
                     </div>
                     <div className="col-12 col-md-4">
                         <label htmlFor="" className='form-label'>Autore</label>
@@ -65,7 +72,7 @@ const CreateMovie = () => {
                         placeholder='Inserisci AUTORE'
                         value={formData.author}
                         onChange={setFieldValue}
-                        required />
+                         />
                     </div>
                     <div className="col-12 col-md-4">
                         <label htmlFor="" className='form-label'>Immagine</label>
@@ -75,9 +82,9 @@ const CreateMovie = () => {
                         type="file"
                         className='form-control'
                         placeholder='Inserisci immagine'
-                           value={formData.image}
+                        
                         onChange={setFieldValue}
-                        required />
+                         />
                     </div>
                     <div className="col-12 col-md-4">
                         <label htmlFor="" className='Form-label'>Trama</label>
@@ -88,11 +95,15 @@ const CreateMovie = () => {
                         placeholder='Inserisci la trama'
                         value={formData.abstract}
                         onChange={setFieldValue}
-                        required>
+                        >
 
                         </textarea>
-                    </div>
-                    
+                    </div>                    
+                </div>
+                <div className="col-12 mt-5">
+                    <button type="submit" className="btn btn-primary">
+                        Salva Film
+                    </button>
                 </div>
             </form>
         </div>

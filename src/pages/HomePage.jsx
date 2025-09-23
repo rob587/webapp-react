@@ -24,9 +24,10 @@ const HomePage = () => {
     <>
       <div className="container">
         <div className="row ">
+           <CreateMovie onMovieCreated={fetchData} />
           {movies.map((movie)=>{
             return(
-          
+              
             <div className="col-4 d-flex justify-content-center mt-5" key={movie.id}>
              <div className="card shadow-sm h-100">
                 <img className="card-img-top p-3" src={`http://localhost:3000${movie.image}`}  alt={movie.description}/>
