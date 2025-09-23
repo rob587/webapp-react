@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import ReviewForm from '../components/ReviewForm'
 
 const DetailFilm = () => {
   const { id } = useParams()
@@ -58,6 +59,9 @@ const DetailFilm = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="review-form">
+          <ReviewForm movieId={id}/>
         </div>
         
       </div>
