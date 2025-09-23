@@ -24,7 +24,7 @@ const HomePage = () => {
     <>
       <div className="container">
         <div className="row ">
-           <CreateMovie onMovieCreated={fetchData} />
+           
           {movies.map((movie)=>{
             return(
               
