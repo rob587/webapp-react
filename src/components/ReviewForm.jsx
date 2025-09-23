@@ -2,15 +2,15 @@ import React from 'react'
 import axios from 'axios'
 import { useState } from 'react'
 
-const ReviewForm = (movieId) => {
+const ReviewForm = ({movieId}) => {
 
     const apiUrl = `http://localhost:3000/movies/${movieId}/reviews`
-
-    const [formData, setFormData] = useState({
+    const initialData = {
         text: "",
         vote: "",
         name: ""
-    })
+    }
+    const [formData, setFormData] = useState(initialData)
 
     const setFieldValue = e =>{
         const {name, value} = e.target
@@ -23,11 +23,7 @@ const ReviewForm = (movieId) => {
     const handleSubmit = (e) =>{
         e.preventDefault()
         axios.post(apiUrl, formData, {headers: {'Content-type': 'application/json'}}).then((resp)=>{
-            setFormData({
-                name: '',
-                text: '',
-                vote: ''
-            })
+            setFormData(initialData)
         })
     }
 
@@ -45,7 +41,8 @@ const ReviewForm = (movieId) => {
             placeholder='Nome' 
             name='name' 
             id='name' 
-            value={formData.name}/>
+            value={formData.name}
+            onChange={setFieldValue} />
         </div>
         <div className="form-group">
             <label htmlFor="" className='form-label'>Voto:</label>
@@ -57,7 +54,8 @@ const ReviewForm = (movieId) => {
             max={5} 
             name='vote' 
             id='vote' 
-            value={formData.vote}/>
+            value={formData.vote}
+            onChange={setFieldValue} />
         </div>
         <div className="form-group">
             <label htmlFor="" className='form-label'>Testo recensione:</label>
@@ -67,7 +65,8 @@ const ReviewForm = (movieId) => {
             placeholder='inserisci recensione' 
             name='text' 
             id='text' 
-            value={formData.text}/>
+            value={formData.text}
+            onChange={setFieldValue} />
         </div>
         <div className="form-group">
             <button type='submit'>Lascia recensione</button>

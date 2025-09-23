@@ -19,7 +19,7 @@ const DetailFilm = () => {
   
   useEffect(() => {
     fetchData()
-  }, [])
+  }, [id])
   
   return (
     <>
@@ -61,7 +61,7 @@ const DetailFilm = () => {
           </div>
         </div>
         <div className="review-form">
-          <ReviewForm movieId={id}/>
+         <ReviewForm movieId={id} onReviewAdded={fetchData} />
         </div>
         
       </div>
