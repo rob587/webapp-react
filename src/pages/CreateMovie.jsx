@@ -13,6 +13,8 @@ const CreateMovie = ({onMovieCreated}) => {
         director: '',
         image: null,
         abstract: '',
+        release_year: '',
+        genre: ''
     })
 
     const setFieldValue = (e) =>{
@@ -29,6 +31,8 @@ const CreateMovie = ({onMovieCreated}) => {
   data.append('director', formData.director)
   data.append('abstract', formData.abstract)
   data.append('image', formData.image) 
+  data.append('genre', formData.genre) 
+  data.append('release_year', formData.release_year) 
   axios.post('http://localhost:3000/movies', data, {
     headers: { "Content-Type": "multipart/form-data" }
   })
@@ -75,6 +79,30 @@ const CreateMovie = ({onMovieCreated}) => {
                          />
                     </div>
                     <div className="col-12 col-md-4">
+                        <label htmlFor="" className='form-label'>Genere</label>
+                        <input
+                        name='genre'
+                        id='genre' 
+                        type="text"
+                        className='form-control'
+                        placeholder='Inserisci AUTORE'
+                        value={formData.genre}
+                        onChange={setFieldValue}
+                         />
+                    </div>
+                    <div className="col-12 col-md-4">
+                        <label htmlFor="" className='form-label'>Anno di rilascio</label>
+                        <input
+                        name='release_year'
+                        id='release_year' 
+                        type="text"
+                        className='form-control'
+                        placeholder='Inserisci l anno'
+                        value={formData.release_year}
+                        onChange={setFieldValue}
+                         />
+                    </div>
+                    <div className="col-12 col-md-4">
                         <label htmlFor="" className='form-label'>Immagine</label>
                         <input
                         name='image'
@@ -92,7 +120,7 @@ const CreateMovie = ({onMovieCreated}) => {
                         name="abstract"
                         id="abstract"
                         className='form-control'
-                        placeholder='Inserisci la trama'
+                        placeholder='Inserisci Genere'
                         value={formData.abstract}
                         onChange={setFieldValue}
                         >
