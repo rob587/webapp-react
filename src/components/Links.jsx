@@ -15,6 +15,7 @@ const Links = () => {
                     <li className="me-4 ">
                        <NavLink style={{textDecoration: 'none'}} to='/'  > Homepage </NavLink> 
                     </li>
+                    <button>Inserisci nuovo Film</button>
                 </ul>
             </div>
         </div>

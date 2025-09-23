@@ -1,6 +1,6 @@
 import HomePage from "./pages/HomePage"
 import DetailProduct from "./pages/DetailFilm"
-
+import CreateMovie from "./pages/CreateMovie"
 import  DefaultLayout from "./layout/DefaultLayout"
 import  {BrowserRouter, Routes, Route,} from "react-router-dom"
 
@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<DefaultLayout />}>
             <Route index element={<HomePage />} />
             <Route path="details/:id" element={<DetailProduct />} />
+            <Route path="/createmovie" element={<CreateMovie/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
