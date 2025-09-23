@@ -19,7 +19,7 @@ const Links = () => {
                     
                     <li>
                         <NavLink to="/movie/create" style={{ textDecoration: 'none' }}>
-                            <button>Inserisci nuovo Film</button>
+                            <button>Inserisci  lascia una nuova recensione</button>
                         </NavLink>
                     </li>
                     
