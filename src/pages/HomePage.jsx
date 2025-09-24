@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Loader from '../components/Loader'
+import GlobalContext from '../contexts/globalContexts'
 
 const HomePage = () => {
 
   const [movies, setMovies] = useState([])
+  const {setIsLoading} = useContext(GlobalContext)
 
   const url = ('http://localhost:3000/movies')
 
     const fetchData = () =>{
+      setIsLoading(true)
     axios.get(url).then((resp)=>{
       setMovies(resp.data)
+      setIsLoading(false)
     })
   }
 
@@ -24,7 +28,7 @@ const HomePage = () => {
   return (
     <>
       <div className="container">
-        
+       
         <div className="row ">
            
           {movies.map((movie)=>{

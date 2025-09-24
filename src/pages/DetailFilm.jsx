@@ -1,18 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import ReviewForm from '../components/ReviewForm'
+import GlobalContext from '../contexts/globalContexts'
+
+
+
+
 
 const DetailFilm = () => {
   const { id } = useParams()
   const [movie, setMovie] = useState({})
   const [reviews, setReviews] = useState([])
+  const {setIsLoading} = useContext(GlobalContext)
   const url = `http://localhost:3000/movies/${id}`
   
   const fetchData = () => {
+    setIsLoading(true)
     axios.get(url).then((resp) => {
       setMovie(resp.data.film)
       setReviews(resp.data.reviews)
+      setIsLoading(false)
       
     })
   }

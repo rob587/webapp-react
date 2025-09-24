@@ -16,7 +16,7 @@ const DefaultLayout = () => {
     <div>
       <Links/>
       <Outlet/>
-      {isLoading&&Loader}
+      {isLoading&& <Loader/>}
     </div>
   )
 }
