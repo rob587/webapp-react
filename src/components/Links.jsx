@@ -19,7 +19,7 @@ const Links = () => {
                     
                     <li>
                         <NavLink to="/movie/create" style={{ textDecoration: 'none' }}>
-                            <button className='add-btn'>Inserisci Film</button>
+                            <button className='add-btn fs-3'>Inserisci Film</button>
                         </NavLink>
                     </li>
                     

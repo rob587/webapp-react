@@ -26,14 +26,14 @@ const DetailFilm = () => {
       <div className="container">
         <div className="row">
           <div className="col-12 mt-5">
-            <div className="card shadow-sm">
+            <div className="card  border-light shadow-sm p-3">
               <div className="row g-0">
                 <div className="col-md-4">
-                  <img src={`http://localhost:3000/cover/${movie.image}`} className="img-fluid rounded-start" alt={movie.title}/>
+                  <img src={`http://localhost:3000/cover/${movie.image}`} className="img-fluid rounded-start p-2" alt={movie.title}/>
                 </div>
                 <div className="col-md-8 px-4">
                   <div className="card-body ">
-                    <h1 className="card-title">{movie.title}</h1>
+                    <h1 className="card-title ">{movie.title}</h1>
                     <p className="card-text">{movie.abstract}</p>
                     <p className="card-text">
                       <small>Regia: {movie.director}</small>

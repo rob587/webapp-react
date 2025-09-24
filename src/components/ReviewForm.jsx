@@ -33,7 +33,7 @@ const ReviewForm = ({movieId}) => {
         <h2 className='text-center'>Aggiungi una recensione </h2>
     </div>
     <form onSubmit={handleSubmit}  >
-        <div className="form-group">
+        <div className="form-group gy-3">
             <label htmlFor="" className='form-label'>Nome:</label>
             <input 
             type="text" 
@@ -71,7 +71,7 @@ const ReviewForm = ({movieId}) => {
             onChange={setFieldValue} 
             required/>
         </div>
-        <div className="form-group">
+        <div className="rev-btn form-group mt-3 d-flex justify-content-end">
             <button type='submit'>Lascia recensione</button>
         </div>
     </form>

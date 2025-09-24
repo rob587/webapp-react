@@ -34,7 +34,7 @@ li:hover{
     padding: 10px 15px 10px 15px;
     border-radius: 30px;
     border-color: transparent;
-    font-size: 20px;
+    
 }
 
 .list-unstyled a{
@@ -59,9 +59,21 @@ li:hover{
 }
 
 .card{
-    border-color: black;
+    border-color: white 5px;
 }
 
  .card-body, .card-title{
     background-color: #E2D1C1;
 }
+
+
+
+.rev-btn button{
+     padding: 10px 15px 10px 15px;
+    border-radius: 30px;
+    border-color: white;
+    font-size: 20px;
+    color: white;
+}
+
+

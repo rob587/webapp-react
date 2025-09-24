@@ -29,7 +29,7 @@ const HomePage = () => {
             return(
               
             <div className="col-4 d-flex justify-content-center mt-5" key={movie.id}>
-             <div className="card  ">
+             <div className="card border-light border-3   ">
                 <img className="card-img-top " src={`http://localhost:3000/cover/${movie.image}`}  alt={movie.description}/>
                 <div className="card-body ">
                   <h2 className="card-title "><Link style={{textDecoration: 'none'}} to={`/details/${movie.id}`}>{movie.title}</Link></h2>
