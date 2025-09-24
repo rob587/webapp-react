@@ -85,7 +85,7 @@ const CreateMovie = ({onMovieCreated}) => {
                         id='genre' 
                         type="text"
                         className='form-control'
-                        placeholder='Inserisci AUTORE'
+                        placeholder='Inserisci Genere'
                         value={formData.genre}
                         onChange={setFieldValue}
                          />
@@ -120,7 +120,7 @@ const CreateMovie = ({onMovieCreated}) => {
                         name="abstract"
                         id="abstract"
                         className='form-control'
-                        placeholder='Inserisci Genere'
+                        placeholder='Inserisci trama'
                         value={formData.abstract}
                         onChange={setFieldValue}
                         >
