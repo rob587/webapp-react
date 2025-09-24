@@ -24,7 +24,7 @@ const HomePage = () => {
   return (
     <>
       <div className="container">
-        <Loader/>
+        
         <div className="row ">
            
           {movies.map((movie)=>{
