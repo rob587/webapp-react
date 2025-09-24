@@ -1,10 +1,17 @@
-body{
-    font-family: "Ubuntu" "Open Sans";
+*{
+    font-family: "Ubuntu" ;
+    background-color: #E2D1C1;
 }
 
 .card-img-top{
     height: 500px;
+    
 }
+
+.card-img-top{
+    color: white;
+}
+
 
 .card-body p{
     font-size: 25px;
@@ -23,4 +30,38 @@ li:hover{
     color:#1E2226
 }
 
+.add-btn{
+    padding: 10px 15px 10px 15px;
+    border-radius: 30px;
+    border-color: transparent;
+    font-size: 20px;
+}
 
+.list-unstyled a{
+    color: black;
+}
+
+
+.card-title a{
+    color: white;
+    font-size: 40px;
+}
+
+.card-title{
+    background-color: black;
+}
+
+
+
+.card-body{
+    color: white;
+    background-color: black;
+}
+
+.card{
+    border-color: black;
+}
+
+ .card-body, .card-title{
+    background-color: #E2D1C1;
+}

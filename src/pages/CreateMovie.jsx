@@ -53,7 +53,7 @@ const CreateMovie = ({onMovieCreated}) => {
         </div>
         <div className="col-12">
             <form onSubmit={handleSubmit} >
-                <div className="row gy-4">
+                <div className="row gy-1">
                     <div className="col-12 col-md-4">
                         <label htmlFor="" className='form-label'>Titolo</label>
                         <input
